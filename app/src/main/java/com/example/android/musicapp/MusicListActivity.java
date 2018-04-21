@@ -1,7 +1,10 @@
 package com.example.android.musicapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,7 +17,7 @@ public class MusicListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_music_list);
 
         // Create an ArrayList of Song objects
-        ArrayList<Song> Songs = new ArrayList<Song>();
+        final ArrayList<Song> Songs = new ArrayList<>();
         Songs.add(new Song("Imagine", "John Lennon", "1971"));
         Songs.add(new Song("Bohemian Rhapsody", "Queen", "1975"));
         Songs.add(new Song("Cats In The Cradle", "Harry Chapin", "1974"));
@@ -31,7 +34,7 @@ public class MusicListActivity extends AppCompatActivity {
         AndroidSongsAdapter songAdapter = new AndroidSongsAdapter(this, Songs);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
-        ListView listView = findViewById(R.id.listview_songs);
+        final ListView listView = findViewById(R.id.listview_songs);
         listView.setAdapter(songAdapter);
     }
 }

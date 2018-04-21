@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,16 +17,19 @@
         android:id="@+id/textListHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_list_header"
-        android:padding="@dimen/spaceLarge"
-        android:textColor="@color/colorWhite"
         android:background="@color/colorPrimary"
-        android:textSize="@dimen/fontMedium"/>
+        android:padding="@dimen/spaceLarge"
+        android:text="@string/app_list_header"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="@dimen/fontMedium"
+        android:fontFamily="monospace" />
 
     <ListView
         android:id="@+id/listview_songs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textListHeader">
 
     </ListView>
 

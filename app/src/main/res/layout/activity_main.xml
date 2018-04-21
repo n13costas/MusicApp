@@ -11,38 +11,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/musicbg" />
+        android:src="@drawable/musicbg"
+         />
 
     <TextView
         android:id="@+id/textMusicAppView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
         android:fontFamily="monospace"
-        android:textAllCaps="true"
+        android:padding="@dimen/spaceXLarge"
+        android:textSize="@dimen/fontXLarge"
         android:text="@string/app_motto"
+        android:textAllCaps="true"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageBgView"
-        app:layout_constraintEnd_toEndOf="@+id/imageBgView"
-        app:layout_constraintStart_toStartOf="@+id/imageBgView"
-        app:layout_constraintTop_toTopOf="@+id/imageBgView"
-        android:padding="@dimen/spaceXLarge"/>
+        app:layout_constraintBottom_toTopOf="@+id/textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="casual"
+        android:padding="@dimen/spaceMedium"
+        android:textSize="@dimen/fontLarge"
         android:text="@string/app_start"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMusicAppView"
-        android:background="@color/colorPrimary"
-        android:fontFamily="casual"
-        android:padding="@dimen/spaceMedium"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

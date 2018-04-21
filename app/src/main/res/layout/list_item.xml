@@ -46,6 +46,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/play_button"
         android:src="@drawable/play"
         android:layout_width="@dimen/playSize"
         android:layout_height="@dimen/playSize"
