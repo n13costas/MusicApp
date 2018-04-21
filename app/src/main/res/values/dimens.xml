@@ -16,4 +16,7 @@
     <dimen name="spaceXLarge">24dp</dimen>
     <dimen name="spaceButtons">48dp</dimen>
 
+    <!-- Play icon sizes. -->
+    <dimen name="playSize">32dp</dimen>
+
 </resources>
