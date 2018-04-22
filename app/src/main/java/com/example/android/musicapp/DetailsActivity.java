@@ -3,6 +3,7 @@ package com.example.android.musicapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -27,5 +28,14 @@ public class DetailsActivity extends AppCompatActivity {
 
         TextView detailsYear = findViewById(R.id.detailsYear);
         detailsYear.setText(songYear);
+
+        // Go back to list view
+        TextView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

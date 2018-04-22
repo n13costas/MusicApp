@@ -15,13 +15,25 @@
         android:src="@drawable/music_app_bg" />
 
     <TextView
+        android:id="@+id/detailsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/spaceLarge"
+        android:text="@string/app_details_header"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="@dimen/fontMedium"
+        android:fontFamily="monospace" />
+
+    <TextView
         android:id="@+id/detailsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@color/colorPrimaryDark"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimary"
         android:fontFamily="monospace"
         android:padding="@dimen/spaceLarge"
         android:textAlignment="center"
@@ -58,7 +70,24 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/fontMedium"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/detailsName"
+        app:layout_constraintTop_toBottomOf="@+id/detailsGroup"/>
+
+    <TextView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_buttons"
+        android:fontFamily="casual"
+        android:padding="@dimen/spaceLarge"
+        android:textSize="@dimen/fontMedium"
+        android:textAlignment="center"
+        android:text="@string/app_back"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailsName"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsName" />
 
 </android.support.constraint.ConstraintLayout>
