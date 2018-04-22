@@ -11,32 +11,25 @@ public class Song {
     // Year of first release
     private String mSongYear;
 
-    public Song(String sName, String sGroup, String sYear)
+    public Song(String songName, String songGroup, String songYear)
     {
-        mSongName = sName;
-        mSongGroup = sGroup;
-        mSongYear = sYear;
+        mSongName = songName;
+        mSongGroup = songGroup;
+        mSongYear = songYear;
     }
 
-    /**
-     * Get the name of the song
-     */
+    // Get the name of the song
     public String getSongName() {
         return mSongName;
     }
 
-    /**
-     * Get the name of the group
-     */
+    // Get the name of the group
     public String getSongGroup() {
         return mSongGroup;
     }
 
-    /**
-     * Get the year of first release
-     */
+    // Get the year of first release
     public String getSongYear() {
         return mSongYear;
     }
-
 }

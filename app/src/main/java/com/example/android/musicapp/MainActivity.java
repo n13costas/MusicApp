@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set intent to List view
         TextView startButton = findViewById(R.id.textStart);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(listIntent);
             }
         });
-
     }
 }
 

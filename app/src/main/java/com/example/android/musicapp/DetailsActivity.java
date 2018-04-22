@@ -12,20 +12,20 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        /* Getting category chosen by user */
+        /* Get the extras from intent to show them in details activity */
         Intent detailsIntent = getIntent();
-        String sName = detailsIntent.getStringExtra("SongN");
-        String sGroup = detailsIntent.getStringExtra("SongG");
-        String sYear = detailsIntent.getStringExtra("SongY");
+        String songName = detailsIntent.getStringExtra("detailsSongName");
+        String songGroup = detailsIntent.getStringExtra("detailsSongGroup");
+        String songYear = detailsIntent.getStringExtra("detailsSongYear");
 
-        TextView dName = findViewById(R.id.detailsName);
-        dName.setText(sName);
+        // Add the extras to views
+        TextView detailsName = findViewById(R.id.detailsName);
+        detailsName.setText(songName);
 
-        TextView dGroup = findViewById(R.id.detailsGroup);
-        dGroup.setText(sGroup);
+        TextView detailsGroup = findViewById(R.id.detailsGroup);
+        detailsGroup.setText(songGroup);
 
-        TextView dYear = findViewById(R.id.detailsYear);
-        dYear.setText(sYear);
-
+        TextView detailsYear = findViewById(R.id.detailsYear);
+        detailsYear.setText(songYear);
     }
 }

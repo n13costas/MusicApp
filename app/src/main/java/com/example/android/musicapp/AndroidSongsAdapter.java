@@ -12,16 +12,16 @@ import java.util.ArrayList;
 
 public class AndroidSongsAdapter extends ArrayAdapter<Song> {
 
-    Activity a;
+    Activity activity;
 
     public AndroidSongsAdapter(Activity context, ArrayList<Song> Songs) {
         super(context, 0, Songs);
-
-        this.a = context;
+        this.activity = context;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -32,15 +32,16 @@ public class AndroidSongsAdapter extends ArrayAdapter<Song> {
         // Get the Song object located at this position in the list
         final Song currentSong = getItem(position);
 
-        TextView nameTextView = listItemView.findViewById(R.id.song_name);
+        TextView nameTextView = listItemView.findViewById(R.id.songName);
         nameTextView.setText(currentSong.getSongName());
 
-        TextView groupTextView = listItemView.findViewById(R.id.song_group);
+        TextView groupTextView = listItemView.findViewById(R.id.songGroup);
         groupTextView.setText(currentSong.getSongGroup());
 
-        TextView yearTextView =  listItemView.findViewById(R.id.song_year);
+        TextView yearTextView =  listItemView.findViewById(R.id.songYear);
         yearTextView.setText(currentSong.getSongYear());
 
+        // Open the details activity on item click
         listItemView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -51,18 +52,15 @@ public class AndroidSongsAdapter extends ArrayAdapter<Song> {
         // Return the whole list item layout (containing 3 TextViews)
         // so that it can be shown in the ListView
         return listItemView;
-
     }
 
-    private void openDetailsActivity(String sname, String sgroup, String syear){
-        Intent detailsIntent= new Intent(a, DetailsActivity.class);
-        detailsIntent.putExtra("SongN", sname );
-        detailsIntent.putExtra("SongG", sgroup );
-        detailsIntent.putExtra("SongY", syear );
+    // Open the details activity method through intent and adding some extras
+    private void openDetailsActivity(String detailsSongName, String detailsSongGroup, String detailsSongYear){
+        Intent detailsIntent= new Intent(activity, DetailsActivity.class);
+        detailsIntent.putExtra("detailsSongName", detailsSongName );
+        detailsIntent.putExtra("detailsSongGroup", detailsSongGroup );
+        detailsIntent.putExtra("detailsSongYear", detailsSongYear );
 
-        a.startActivity(detailsIntent);
+        activity.startActivity(detailsIntent);
     }
-
-
-
 }
